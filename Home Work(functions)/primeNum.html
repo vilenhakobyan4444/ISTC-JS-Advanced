@@ -10,6 +10,7 @@
     <!-- bolor xndirneri hamar petq e ogtagortsel "arguments"
 1. Grel function, vor y stanum e number tipi 4 argument,  ev stugum e ardyoq tivy parz e te voch.
 ete parz tiv e, apa DOM -um cuyc eq talis ayd parz tivy (edited)  -->
+    
         <h1 id="h1"></h1>
     <script>
         function prime(n1,n2,n3,n4){
@@ -24,7 +25,22 @@ ete parz tiv e, apa DOM -um cuyc eq talis ayd parz tivy (edited)  -->
         }
         prime(2,5,4,9);
 
-
+                                       
+                                      //****CASE2****
+        
+  function isPrime(a, b, c, d, e, f){
+  var numbers = Array.from(arguments);
+  for(var i = 0; i<numbers.length; i++){
+    for(var l = 2; l < numbers[i]; l++){
+      if(numbers[i]%l===0){
+        numbers.splice(i, 1);
+      } 
+    }
+  }
+  console.log(numbers);
+}
+  
+isPrime(1, 4, 5, 6, 7, 10, 78);
 
 
     </script>
