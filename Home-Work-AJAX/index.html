@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap" rel="stylesheet">
+    <style>
+        *{font-family: 'Montserrat', sans-serif;}
+        body{margin: 0;padding: 0; }
+        .wrapper{
+            margin: auto;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .buttonsDiv{
+            margin: 0 auto;
+            display: block;
+            width: max-content;
+        }
+        li
+        {text-align: center;
+        list-style-type: none;
+        color: #444;
+        margin: 10px 0;
+        }
+        h2{
+            text-align: center;
+            color: #444;
+            text-shadow: 0 0 3px lightseagreen;
+        }
+        ul{padding: 0 40px}
+        .ulDiv{
+            display: flex;
+            margin: auto;
+        }
+        button{
+            width: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            background: aliceblue;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        button:hover{
+            background: rgb(186, 223, 255);
+            box-shadow: 0 0 5px lightseagreen;
+        }
+    </style>
+</head>
+<body>
+        <div class="wrapper">
+            <div class="buttonsDiv">  
+                <button type="button" onclick="userId()">UserId</button>
+                <button type="button" onclick="id1()">Id</button>
+                <button type="button" onclick="title1()">Title</button>
+                <button type="button" onclick="body1()">Body</button>
+            </div>
+            <div class="ulDiv">
+                <ul id="ulUser" ><h2 id="userH2" style="display: none;">UserId</h2></ul>
+                <ul id="ulId"><h2 id="idH2" style="display: none;">ID</h2></ul>
+                <ul id="ulTitle"><h2 id="titleH2" style="display: none;">Title</h2></ul>  
+                <ul id="ulBody"><h2 id="bodyH2" style="display: none;">Body</h2></ul>
+            </div>
+
+        </div>
+        
+        
+
+
+
+
+
+        <script>
+        function userId() {
+        userH2.style.display = "block";
+        var xhttp = new XMLHttpRequest();
+          console.log(xhttp.responseText)
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var obj = JSON.parse(xhttp.responseText);
+                for(let i in obj){
+                    let li = document.createElement("li");
+                    li.innerHTML = obj[i].userId;
+                    ulUser.appendChild(li);
+                }
+            }
+          };
+          xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+          xhttp.send();
+        }
+
+        function id1() {
+        idH2.style.display = "block";
+        var xhttp = new XMLHttpRequest();
+          console.log(xhttp.responseText)
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var obj = JSON.parse(xhttp.responseText);
+                for(let i in obj){
+                    let li = document.createElement("li");
+                    li.innerHTML = obj[i].id;
+                    ulId.appendChild(li);
+                }
+            }
+          };
+          xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+          xhttp.send();
+        }
+
+
+        function title1() {
+        titleH2.style.display = "block";
+        var xhttp = new XMLHttpRequest();
+          console.log(xhttp.responseText)
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var obj = JSON.parse(xhttp.responseText);
+                for(let i in obj){
+                    let li = document.createElement("li");
+                    li.innerHTML = obj[i].title;
+                    ulTitle.appendChild(li);
+                }
+            }
+          };
+          xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+          xhttp.send();
+        }
+
+
+
+        function body1() {
+        bodyH2.style.display = "block";
+          var xhttp = new XMLHttpRequest();
+          console.log(xhttp.responseText)
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var obj = JSON.parse(xhttp.responseText);
+                for(let i in obj){
+                    let li = document.createElement("li");
+                    li.innerHTML = obj[i].body;
+                    ulBody.appendChild(li);
+                }
+            }
+          };
+          xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+          xhttp.send();
+        }        
+
+        </script>  
+
+
+
+
+
+
+</body>
+</html>
+
+
