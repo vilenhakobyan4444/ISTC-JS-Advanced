@@ -8,27 +8,32 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap" rel="stylesheet">
     <style>
         *{font-family: 'Montserrat', sans-serif;}
-        body{margin: 0;padding: 0; }
+        body{margin: 0;padding: 0; background: azure;}
         .wrapper{
             margin: auto;
             background-size: cover;
             background-repeat: no-repeat;
         }
         .buttonsDiv{
-            margin: 0 auto;
+            margin: 20px auto;
             display: block;
             width: max-content;
         }
-        li
-        {text-align: center;
-        list-style-type: none;
-        color: #444;
-        margin: 10px 0;
+        li{
+            text-align: center;
+            list-style-type: none;
+            color: #444;
+            margin: 10px 0;
+            border: 1px solid lightgray;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5px;
         }
         h2{
             text-align: center;
             color: #444;
-            text-shadow: 0 0 3px lightseagreen;
         }
         ul{padding: 0 40px}
         .ulDiv{
@@ -41,13 +46,12 @@
             border-radius: 10px;
             border: none;
             outline: none;
-            background: aliceblue;
+            background: rgb(186, 223, 255);
             cursor: pointer;
             transition: 0.5s;
         }
         button:hover{
-            background: rgb(186, 223, 255);
-            box-shadow: 0 0 5px lightseagreen;
+           background:  rgb(126, 195, 255);
         }
     </style>
 </head>
@@ -67,13 +71,6 @@
             </div>
 
         </div>
-        
-        
-
-
-
-
-
         <script>
         function userId() {
         userH2.style.display = "block";
@@ -110,8 +107,6 @@
           xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
           xhttp.send();
         }
-
-
         function title1() {
         titleH2.style.display = "block";
         var xhttp = new XMLHttpRequest();
@@ -129,9 +124,6 @@
           xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
           xhttp.send();
         }
-
-
-
         function body1() {
         bodyH2.style.display = "block";
           var xhttp = new XMLHttpRequest();
@@ -151,11 +143,6 @@
         }        
 
         </script>  
-
-
-
-
-
 
 </body>
 </html>
