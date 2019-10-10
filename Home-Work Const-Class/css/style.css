@@ -5,7 +5,6 @@ html,body,.wrapper{
     font: Bold 16px/30px Montserrat;
 }
 .wrapper{
-    background-image: url(../img/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
